@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" th:href="@{/styles/show.css}">
+</head>
+<body>
+<h1 th:text="'Weather in ' + ${weatherData.getCity()}">CITY NAME</h1>
+
+<br />
+<hr />
+<br />
+<p th:text="'Temperature: ' + ${weatherData.getMain().getTemp() + '°C'}">temp</p>
+<p th:text="'Feels like: ' + ${weatherData.getMain().getFeels_like() + '°C'}">temp</p>
+<p th:text="'Min temperature: ' + ${weatherData.getMain().getTemp_min() + '°C'}">temp</p>
+<p th:text="'Max temperature: ' + ${weatherData.getMain().getTemp_max()} + '°C'">temp</p>
+<p th:text="'Pressure: ' + ${weatherData.getMain().getPressure()}">temp</p>
+<p th:text="'Humidity: ' + ${weatherData.getMain().getHumidity()}">temp</p>
+<p th:text="'Sea level: ' + ${weatherData.getMain().getSea_level()}">temp</p>
+<p th:text="'Ground level: ' + ${weatherData.getMain().getGrnd_level()}">temp</p>
+
+<br />
+<hr />
+<br />
+
+<form th:method="GET" th:action="@{/weather}">
+    <input type="submit" value="Back to the main page" />
+
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <form th:method="GET" th:action="@{/weather/result}">
+        <label for="cityName">Enter city</label>
+        <input type="text" id="cityName" name="cityName" class="cityName" />
+
+        <br />
+        <br />
+
+        <input type="submit" value="Request" class="button">
+    </form>
+</body>
+</html>
